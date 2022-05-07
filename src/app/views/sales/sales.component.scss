@@ -34,3 +34,20 @@
     padding: 0.375rem 0.75rem  !important;
 }
 
+button.btn-custom {
+    background: #830459;
+    border: 2px solid #c93597;
+    color: #fff;
+    border-radius: 10px;
+    height: 44px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button.btn-custom:hover {
+    background: #ab1d7b;
+    border: 2px solid #830459;
+}
+
