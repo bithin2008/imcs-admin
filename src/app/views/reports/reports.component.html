@@ -1,0 +1,121 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Reports</h4>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="typeofreport">Type of Report</label>
+                                <select class="form-control" id="typeofreport">
+                                    <option>Select a Report Type</option>
+                                    <option>Sales</option>
+                                    <option>Purchase</option>
+                                    <option>Inventory</option>
+                                    <option>Financials</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="filterby">Filter By</label>
+                                <select class="form-control" id="filterby">
+                                    <option>Product Sales</option>
+                                    <option>Channel Sales</option>
+                                    <option>Category-based Sales</option>
+                                    <option>Vendor Sales by categories</option>
+                                    <option>Sales Report by Representatives</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="filterby">Duration </label>
+                                <select class="form-control" id="filterby" [(ngModel)]="duration">
+                                    <option value="day">Day</option>
+                                    <option value="week">Week</option>
+                                    <option value="month">Month</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Channel</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Classification</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Total Price</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Order Type</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Sub Classfification</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Disc</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Sales Representative</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Vendor Model No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Net Price</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">PID</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Description</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Classification</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ng-container *ngIf="duration=='day'">
+                        <bs-datepicker-inline [bsValue]="bsInlineValue" [bsConfig]="{containerClass:'theme-red'}">
+                        </bs-datepicker-inline>
+                    </ng-container>
+                    <ng-container *ngIf="duration=='week'">
+                        <bs-datepicker-inline [bsValue]="bsInlineRangeValue" [bsConfig]="{containerClass:'theme-red'}">
+                        </bs-datepicker-inline>
+                    </ng-container>
+                    <ng-container *ngIf="duration=='month'">
+                        <bs-datepicker-inline [bsValue]="bsInlineValue"
+                            [bsConfig]="{minMode:'month',containerClass:'theme-red'}">
+                        </bs-datepicker-inline>
+                    </ng-container>
+
+
+                </div>
+
+            </div>
+            <div class="text-start">
+                <button type="button" class="btn btn-primary me-2">Daily Sales Report</button>
+                <button type="button" class="btn btn-primary me-2">Monthly Sales Report</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

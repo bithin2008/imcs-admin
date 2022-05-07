@@ -1,0 +1,131 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Sales</h3>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <select class="form-control" id="exampleSelectGender">
+                            <option value="">All orders</option>
+                            <option>All Pre-orders </option>
+                            <option>All Pending Orders </option>
+                            <option>All Confirmed Orders </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;" [rowData]="salesList"
+                [columnDefs]="columnDefs">
+            </ag-grid-angular>
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Invoice No
+                            </th>
+                            <th>
+                                Date & Time
+                            </th>
+                            <th>
+                                Customer Name
+                            </th>
+                            <th>
+                                Channel
+                            </th>
+                            <th>
+                                Order Type
+                            </th>
+                            <th>
+                                Payment Mode
+                            </th>
+                            <th>
+                                Sales Representative
+                            </th>
+                            <th>
+                                Total Sales
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th style="width: 100px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of salesList">
+                            <td>
+                                <b> {{item.invoiceNo}}</b>
+                            </td>
+                            <td>
+                                {{item.dateTime}}
+                            </td>
+                            <td>
+                                <b> {{item.customerName}}</b>
+                            </td>
+                            <td>
+                                {{item.channel}}
+                            </td>
+                            <td>
+                                {{item.orderType}}
+                            </td>
+                            <td>
+                                {{item.paymentMode}}
+                            </td>
+                            <td>
+                                {{item.salesRepresentative}}
+                            </td>
+                            <td>
+                                {{item.totalSales}}
+                            </td>
+                            <td>
+                                <label class="badge badge-danger" *ngIf="item.status=='Pending'">Pending</label>
+                                <label class="badge badge-success" *ngIf="item.status=='Confirmed'">Confirmed</label>
+
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning btn-rounded btn-icon"
+                                    (click)="editSales(item)"> <i class="mdi mdi-lead-pencil"></i></button> &nbsp;
+                                <button type="button" class="btn btn-outline-danger btn-rounded btn-icon"><i
+                                        class="mdi mdi-delete"></i></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <nav aria-label="Page navigation  example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item"><a class="page-link" href="#">«</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

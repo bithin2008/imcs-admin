@@ -1,0 +1,74 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Sales: {{salesObj.invoiceNo}}</h3>
+            <ngx-tabset customNavClass="nav-test-class">
+                <ngx-tab tabTitle="General" [bypassDOM]="true">
+                    <ng-template>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Invoice Number</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Invoice Number" [(ngModel)]="salesObj.invoiceNo">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Invoice Date & Time</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Invoice Number" [(ngModel)]="salesObj.dateTime">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleSelectGender">Channel</label>
+                                    <select class="form-control" id="exampleSelectGender">
+                                        <option>Store</option>
+                                        <option>Online</option>
+                                        <option>Phone-Order</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleSelectGender">Order Type</label>
+                                    <select class="form-control" id="exampleSelectGender">
+                                        <option>Custom</option>
+                                        <option>Pre-Order</option>
+                                        <option>Standard</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Sales Representative</label>
+                                    <input type="text" class="form-control" id="exampleInputName1"
+                                        placeholder="Sales Representative" [(ngModel)]="salesObj.salesRepresentative">
+                                </div>
+                            </div>
+
+                        </div>
+                    </ng-template>
+
+                </ngx-tab>
+                <ngx-tab tabTitle="Customer">
+
+                </ngx-tab>
+                <ngx-tab tabTitle="Products">
+                    Content of the Map Tab
+                </ngx-tab>
+                <ngx-tab tabTitle="Payments">
+                    Content of the Map Tab
+                </ngx-tab>
+            </ngx-tabset>
+            <hr>
+            <div class="col-md-12 text-end">
+                <button type="button" class="btn btn-custom me-2">Save</button>
+                <button type="button" class="btn btn-custom me-2" (click)="goToSales()">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

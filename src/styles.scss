@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@import "~ngx-tabset/ngx-tabset";
+
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+.theme-red .bs-datepicker-head{
+    background-color: #8b0f60;
+}
+
+.theme-red .bs-datepicker-body table td span.selected{
+    background-color: #8b0f60;
+}
+.bs-datepicker{
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.form-control {
+    min-height: 40px;
+}
+
+.nav-tabset:not(.disable-style) .nav-tab{
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+}

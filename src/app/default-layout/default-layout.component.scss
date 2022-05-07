@@ -1,0 +1,100 @@
+.wraper {
+     background-image: url(../../assets/images/content-bg.jpg);
+     background-repeat: no-repeat;
+     background-position: center bottom;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    background-color: #320019;
+}
+
+.drop-down {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .drop-down > input[type="checkbox"] {
+    position: absolute;
+    left: -100vw;
+  }
+  
+  .drop-down > label,
+  .drop-down > a[role="button"] {
+    color: #333;
+    line-height: 1.5em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .drop-down > label:hover,
+  .drop-down > a[role="button"]:hover,
+  .drop-down > a[role="button"]:focus {
+    border-color: #333;
+  }
+  
+  .drop-down > label:after,
+  .drop-down > a[role="button"]:after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: 6px;
+  }
+  
+  .drop-down > ul {
+    position: absolute;
+    z-index: 999;
+    display: block;
+    left: calc(-150vw + 250px);
+    top: calc(1.5em + 25px);
+    border: 1px solid #8c8c8c;
+    background: #fff;
+    padding: 6px 0;
+    margin: 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 8px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 3px 8px rgba(0,0,0,.15);
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+  }
+  
+  .drop-down > ul a {
+    display: block;
+    padding: 6px 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .drop-down > ul a:hover,
+  .drop-down > ul a:focus {
+    background: #ececec;
+  }
+  
+  .drop-down > input[type="checkbox"]:checked ~ ul,
+  .drop-down > ul:target {
+    right: 0;
+    left: -150px;
+  }
+  
+  .drop-down > [type="checkbox"]:checked + label:after,
+  .drop-down > ul:target ~ a:after {
+    content: "\f0d8";
+  }
+  
+  .drop-down a.close {
+    display: none;
+  }
+  
+  .drop-down > ul:target ~ a.close {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-indent: -100vw;
+    z-index: 1000;
+  }
+  
+  
