@@ -1,7 +1,23 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title mb-3">Sales: {{salesObj.invoiceNo}}</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title mb-3">Sales: {{salesObj.invoiceNo}}</h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="button" class="btn btn-info me-2"><i class="mdi mdi-printer-alert"></i></button>
+                    <button type="button" class="btn btn-warning me-2"><i class="mdi mdi-cash"></i></button>
+                    <button type="button" class="btn btn-return me-2"><i
+                            class="mdi mdi-ticket-confirmation"></i></button>
+                    <button type="button" class="btn btn-price me-2"><i class="mdi mdi-cash-multiple"></i></button>
+                    <button type="button" class="btn btn-danger me-2"><i class="mdi mdi-trash-can"></i></button>
+                    <button type="button" class="btn btn-save me-2" (click)="createInvoice()"><i
+                            class="mdi mdi-content-save-all"></i></button>
+
+                </div>
+            </div>
+
             <ngx-tabset customNavClass="nav-test-class">
                 <ngx-tab tabTitle="General" [bypassDOM]="true">
                     <ng-template>
@@ -128,43 +144,21 @@
                     </div>
                 </ngx-tab>
                 <ngx-tab tabTitle="Products">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="pid">PID</label>
-                                <input type="text" class="form-control" id="pid" placeholder="PID"
-                                    [(ngModel)]="salesObj.pid">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="certificateNumber">Certificate Number</label>
-                                <input type="text" class="form-control" id="certificateNumber" placeholder="PID"
-                                    [(ngModel)]="salesObj.certificateNumber">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description"
-                                    [(ngModel)]="salesObj.description">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="SubTotal">Sub Total</label>
-                                <input type="text" class="form-control" id="SubTotal" placeholder="Sub Total"
-                                    [(ngModel)]="salesObj.subTotal">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="removeProduct">Remove Product</label>
-                                <input type="text" class="form-control" id="removeProduct" placeholder="Remove Product"
-                                    [(ngModel)]="salesObj.removeProduct">
-                            </div>
-                        </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-return me-2"><i
+                                class="mdi mdi-format-list-numbered"></i></button>
+                        <button type="button" class="btn btn-price me-2"><i
+                                class="mdi mdi-format-list-bulleted-square"></i></button>
+                        <button type="button" class="btn btn-save me-2"><i
+                                class="mdi mdi-note-plus-outline"></i></button>
+                        <button type="button" class="btn btn-save me-2"><i class="mdi mdi-plus-box"></i></button>
                     </div>
+                    <div class="mt-2">
+                        <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
+                            [rowData]="productList" [columnDefs]="productColumnDefs">
+                        </ag-grid-angular>
+                    </div>
+
                 </ngx-tab>
                 <ngx-tab tabTitle="Payments">
                     <div class="row">
@@ -193,17 +187,14 @@
 
                         <div class="col-md-12">
                             <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
-                                [rowData]="paymentList" [columnDefs]="paymentColumnDefs">
+                                [rowData]="paymentList" [columnDefs]="paymentColumnDefs"
+                                [defaultColDef]="defaultColDef">
                             </ag-grid-angular>
                         </div>
                     </div>
                 </ngx-tab>
             </ngx-tabset>
-            <hr>
-            <div class="col-md-12 text-end">
-                <button type="button" class="btn btn-custom me-2">Save</button>
-                <button type="button" class="btn btn-custom me-2" (click)="goToSales()">Cancel</button>
-            </div>
+
         </div>
 
     </div>

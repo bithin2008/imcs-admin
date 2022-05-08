@@ -123,9 +123,27 @@ export class SalesEditComponent implements OnInit {
       "Amount": "24,350"
     }
   ];
+  productList: any = [
+    {
+      "pid": "Cash",
+      "certificateNumber": "21,750",
+      "description": "21,750",
+      "subTotal": "21,750",
+      "taxes": "21,750",
+      "removeProduct": "21,750"
+    },
+  ];
   paymentColumnDefs: ColDef[] = [
-    { field: 'paymentType' },
-    { field: 'Amount' }
+    { field: 'paymentType', resizable: true },
+    { field: 'Amount', resizable: true }
+  ];
+  productColumnDefs: ColDef[] = [
+    { field: 'pid', resizable: true },
+    { field: 'certificateNumber', resizable: true },
+    { field: 'description', resizable: true },
+    { field: 'subTotal', resizable: true },
+    { field: 'taxes', resizable: true },
+    { field: 'removeProduct', resizable: true },
   ];
   public defaultColDef: ColDef = {
     resizable: true,
