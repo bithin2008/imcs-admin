@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ColDef } from 'ag-grid-community';
 @Component({
   selector: 'app-sales-edit',
   templateUrl: './sales-edit.component.html',
@@ -96,6 +97,39 @@ export class SalesEditComponent implements OnInit {
     }
 
   ];
+  public paymentList: any = [
+    {
+      "paymentType": "Cash",
+      "Amount": "21,750"
+    },
+    {
+      "paymentType": "Card",
+      "Amount": "24,350"
+    },
+    {
+      "paymentType": "Cash",
+      "Amount": "21,750"
+    },
+    {
+      "paymentType": "Card",
+      "Amount": "24,350"
+    },
+    {
+      "paymentType": "Cash",
+      "Amount": "21,750"
+    },
+    {
+      "paymentType": "Card",
+      "Amount": "24,350"
+    }
+  ];
+  paymentColumnDefs: ColDef[] = [
+    { field: 'paymentType' },
+    { field: 'Amount' }
+  ];
+  public defaultColDef: ColDef = {
+    resizable: true,
+  };
   constructor(private router: Router,
     public activatedRoute: ActivatedRoute,) {
     this.salesId = this.activatedRoute.snapshot.paramMap.get("id");

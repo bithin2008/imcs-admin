@@ -9,6 +9,10 @@ const routes: Routes = [
     component: SalesComponent
   },
   {
+    path: 'new',
+    component: SalesEditComponent
+  },
+  {
     path: ':id',
     component: SalesEditComponent
   }

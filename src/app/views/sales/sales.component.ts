@@ -106,9 +106,17 @@ export class SalesComponent implements OnInit {
     }
 
   ];
+
+  public defaultColDef: ColDef = {
+    resizable: true,
+  };
   constructor(private router: Router,) { }
 
   ngOnInit(): void {
+  }
+
+  createInvoice() {
+    this.router.navigate([`/sales/new`]);
   }
 
 
