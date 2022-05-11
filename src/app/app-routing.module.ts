@@ -52,6 +52,13 @@ const routes: Routes = [
           import("./views/sales/sales.module").then(
             (m) => m.SalesModule
           ),
+      },
+      {
+        path: "communication",
+        loadChildren: () =>
+          import("./views/communication/communication.module").then(
+            (m) => m.CommunicationModule
+          ),
       }
     ]
   },

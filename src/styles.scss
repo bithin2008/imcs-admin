@@ -63,3 +63,24 @@
     border-top-right-radius: 10px;
     padding: 20px;
 }
+
+ngx-intl-tel-input{
+    display: block;
+    width: 100%;
+}
+
+ngx-intl-tel-input .iti,.iti--allow-dropdown input{
+    width: 100%;
+}
+
+ngx-intl-tel-input .iti{
+    border-radius: 5px;
+    padding: 0.4375rem 0.75rem;
+    border: 0;
+    outline: 1px solid #dee2e6;
+    color: #c9c8c8;
+    min-height: 40px;
+}
+.iti--allow-dropdown input{
+    border: none;
+}

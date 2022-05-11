@@ -1,0 +1,36 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Communication</h4>
+            <form #f="ngForm" [formGroup]="phoneForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
+                                [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                                [searchCountryField]="[
+                          SearchCountryField.Iso2,
+                          SearchCountryField.Name
+                        ]" [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="15"
+                                [phoneValidation]="true" [separateDialCode]="separateDialCode"
+                                [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone">
+                            </ngx-intl-tel-input>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Message</label>
+                            <textarea class="form-control" id="exampleInputName1" placeholder="Message"
+                                rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-end">
+                        <button type="button" class="btn btn-primary me-2">Send</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
