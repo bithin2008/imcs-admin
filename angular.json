@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "imcs-application"
+  "defaultProject": "imcs-application",
+  "cli": {
+    "analytics": "ec7b2e76-8a38-4a82-beed-2a919648c370"
+  }
 }
