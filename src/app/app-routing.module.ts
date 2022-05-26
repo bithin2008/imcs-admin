@@ -59,6 +59,13 @@ const routes: Routes = [
           import("./views/communication/communication.module").then(
             (m) => m.CommunicationModule
           ),
+      },
+      {
+        path: "purchases",
+        loadChildren: () =>
+          import("./views/purchases/purchases.module").then(
+            (m) => m.PurchasesModule
+          ),
       }
     ]
   },

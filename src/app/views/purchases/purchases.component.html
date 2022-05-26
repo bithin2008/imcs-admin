@@ -1,0 +1,358 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Purchases</h3>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Username">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 text-end">
+
+                    <button type="button" class="btn btn-price me-2" (click)="openPurchaseModal(addPurchaseModal)">New
+                        Purchase</button>
+                    <button type="button" class="btn btn-save me-2">Download Template</button>
+                </div>
+
+            </div>
+
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Vendor Name
+                            </th>
+                            <th class="text-center">
+                                Vendor Number
+                            </th>
+                            <th class="text-center">
+                                Purchase Date
+                            </th>
+                            <th style="width: 200px;">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of purchaseList">
+                            <td>
+                                <b> {{item.vendorName}}</b>
+                            </td>
+                            <td class="text-center">
+                                {{item.vendorNumber}}
+                            </td>
+                            <td class="text-center">
+                                <b> {{item.purchaseDate}}</b>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-save me-2">Lock</button>
+                                <button type="button" class="btn btn-danger me-2">Delete</button>
+                                <button type="button" class="btn btn-return me-2">Download</button>
+                                <button type="button" class=" btn btn-warning me-2"
+                                    (click)="openPrintModal(printModal)">Print</button>
+                                <button type="button" class="btn btn-price me-2"
+                                    (click)="openViewModal(viewModal)">View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #addPurchaseModal>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label><b>Vendor Name</b></label>
+                    <input type="text" class="form-control" placeholder="Vendor Name" aria-label="Username">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label><b>Vendor Number</b></label>
+                    <input type="number" class="form-control" placeholder="Vendor Number" aria-label="Username">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label><b> Purchase Date</b></label>
+                    <input type="text" class="form-control" bsDatepicker placeholder="Purchase Date"
+                        aria-label="Username" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="text-right"><button type="button" class="btn btn-save upload-btn position-relative mr-2">Upload
+                <input type="file">
+            </button> &nbsp;<button type="button" class="btn btn-price mr-2"
+                (click)="purchaseModalRef?.hide()">Save</button> &nbsp;
+            <button type="button" class="btn btn-danger" (click)="purchaseModalRef?.hide()">Close</button>
+        </div>
+    </div>
+</ng-template>
+<ng-template #printModal>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6"> <button type="button" class="btn btn-price"> Print Test</button></div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Username">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Classification
+                                </th>
+                                <th class="text-center">
+                                    SubClass
+                                </th>
+                                <th class="text-center">
+                                    Metal
+                                </th>
+                                <th>
+                                    Weigtht
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Barcode
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-price">Print</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-price">Print</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-price">Print</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="text-right"><button type="button" class="btn btn-danger"
+                (click)="printModalRef?.hide()">Close</button></div>
+    </div>
+</ng-template>
+<ng-template #viewModal>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6"> </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Username">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Classification
+                                </th>
+                                <th class="text-center">
+                                    SubClass
+                                </th>
+                                <th class="text-center">
+                                    Metal
+                                </th>
+                                <th>
+                                    Weigtht
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Barcode
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> BRACELET</b>
+                                </td>
+                                <td class="text-center">
+                                    DIA 18KT GOLD
+                                </td>
+                                <td class="text-center">
+                                    <b> 18 KT GOLD </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 9.69 </b>
+                                </td>
+                                <td class="text-center">
+                                    <b> 0 </b>
+                                </td>
+                                <td class="text-center">
+                                    <img src="../../../assets/images/barcode.gif"
+                                        style="border-radius: 0; width: 60px; height: 60px;">
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="text-right"><button type="button" class="btn btn-danger"
+                (click)="viewModalRef?.hide()">Close</button></div>
+    </div>
+</ng-template>
