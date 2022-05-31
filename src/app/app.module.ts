@@ -9,7 +9,9 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AvatarModule } from "ngx-avatar";
-
+import { WebService } from './service/common-service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,19 @@ import { AvatarModule } from "ngx-avatar";
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      easing: 'ease-in',
+      timeOut: 4000,
+      preventDuplicates: true,
+    }),
     AvatarModule.forRoot({
       colors: ["#fff"]
     })
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

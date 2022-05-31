@@ -6,8 +6,10 @@ import { AvatarModule, AvatarConfig } from "ngx-avatar";
   styleUrls: ['./default-layout.component.scss']
 })
 export class DefaultLayoutComponent implements OnInit {
-
-  constructor() { }
+  userName: any;
+  constructor() {
+    this.userName = localStorage.getItem('username');
+  }
 
   ngOnInit(): void {
   }

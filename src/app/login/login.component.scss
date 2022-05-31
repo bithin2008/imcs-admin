@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .login-block {
@@ -36,7 +36,8 @@
     text-decoration: underline;
 }
 
-.login-block input, .login-block input:focus {
+.login-block input,
+.login-block input:focus {
     border-radius: 10px;
     background: rgba(70, 5, 50, 80%);
     height: 44px;
@@ -62,14 +63,22 @@
     color: #cdcbcc;
 }
 
-.tilak-logo{
+.tilak-logo {
     padding-top: 20px;
 }
 
-.imcs-logo{
+.imcs-logo {
     padding-bottom: 20px;
 }
 
-img{
+img {
     max-width: 100%;
+}
+
+.validation-error {
+    color: #ff0000;
+    font-size: 12px;
+    padding-left: 10px;
+    margin-top: 4px;
+    height: 24px;
 }

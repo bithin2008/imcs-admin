@@ -5,19 +5,30 @@
 
             <div class="login-block">
                 <h2 class=" text-center mb-4">Login</h2>
-                <form>
-                    <div class="mb-4">
-                        <input type="text" placeholder="Username" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="mb-1">
+                        <input type="text" placeholder="Username" formControlName="username" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
-                    <div class="mb-3">
-                        <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+                    <div class="validation-error">
+                        <span *ngIf="submitted && f.username.errors">
+                            <div *ngIf="f.username.errors.required">Please enter your username</div>
+                        </span>
                     </div>
-                    <div class="mb-3 form-check text-end">
+                    <div class="mb-1">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="validation-error">
+                        <span *ngIf="submitted && f.password.errors">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </span>
+                    </div>
+                    <div class="mb-1 mt-1 form-check text-end">
                         <a routerLink="/forgot-password">Forgot Password?</a>
                     </div>
                     <div class="d-grid gap-2 mb-3">
-                        <button type="button" class="btn btn-primary" (click)="goToReport()">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <!-- <p class="text-center mb-0">Don't have an account? <a href="">Register</a> now</p> -->
                 </form>
