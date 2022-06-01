@@ -37,13 +37,16 @@ export class WebService {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
     } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+      // console.error(
+      //   `Backend returned code ${error.status}, ` +
+      //   `body was: ${error.error}`);
+      return throwError(
+        error.status);
     }
     return throwError(
       'Something bad happened; please try again later.');
   };
+  
   get(url: any): Observable<any> {
     return this._http.get(
       environment.API_ENDPOINT + url, this.getHeader()
@@ -56,7 +59,7 @@ export class WebService {
       environment.API_ENDPOINT + url, data, this.getHeader()
     )
       .pipe(
-        catchError(this.handleError)
+        catchError(err => { return this.handleError(err)})
       );
   }
   checklogin(data: any, url: any) {

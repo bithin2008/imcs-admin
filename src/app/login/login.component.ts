@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public submitted: boolean = false;
   token: any;
   queryParams: any = {};
-  constructor(private router: Router, private formBuilder: FormBuilder, private webService: WebService, private toastr: ToastrService,) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private webService: WebService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -65,8 +65,8 @@ export class LoginComponent implements OnInit {
       //   this.toastr.error(response.message, 'Error');
       // }
     }, (error) => {
-      console.log("error ts: ", error);
-      //  this.toastr.error(error);
+      this.toastr.error(error, 'Warning');
+       //this.toastr.error(error);
     })
     // this.router.navigate(['/default']);
   }
