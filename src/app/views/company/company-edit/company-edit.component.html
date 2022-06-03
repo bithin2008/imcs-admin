@@ -1,0 +1,250 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2" (click)="goToCompany()"><i class="mdi mdi-keyboard-return"></i></button>{{companyObj.invoiceNo}}</h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    
+                    <button type="button" title="Save" class="btn btn-save me-2"><i class="mdi mdi-content-save-all"></i></button>
+
+                </div>
+            </div>
+
+            <ngx-tabset customNavClass="nav-test-class">
+                <ngx-tab tabTitle="General" [bypassDOM]="true">
+                    <ng-template>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Company Name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Company Name" [(ngModel)]="companyObj.companyname">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Lincense Start Date</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Lincense Start Date" [(ngModel)]="companyObj.lincensestartdate">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Lincense End Date</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Lincense End Date" [(ngModel)]="companyObj.lincenseenddate">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Invoice Start Number</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Invoice Start Number" [(ngModel)]="companyObj.invoicestartnumber">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">PO Start Number</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="PO Start Number" [(ngModel)]="companyObj.postartnumber">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">PID Start</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="PID Start" [(ngModel)]="companyObj.pidstart">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Start of Month for Fiscal Year</label>
+                                    <select class="form-control" id="exampleSelectGender">
+                                        <option>Jan</option>
+                                        <option>Feb</option>
+                                        <option>Mar</option>
+                                        <option>Apr</option>
+                                        <option>May</option>
+                                        <option>Jun</option>
+                                        <option>Jul</option>
+                                        <option>Aug</option>
+                                        <option>Sep</option>
+                                        <option>Oct</option>
+                                        <option>Nov</option>
+                                        <option>Dec</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Security Code</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Security Code" [(ngModel)]="companyObj.securitycode">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Renter Security Code</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Renter Security Code" [(ngModel)]="companyObj.rentersecuritycode">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Attach Logo</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Attach Logo" [(ngModel)]="companyObj.attachlogo">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                </ngx-tab>
+                <ngx-tab tabTitle="Taxes">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="salesTax">Sales Tax (%)</label>
+                                <input type="text" class="form-control" id="salesTax" placeholder="Sales Tax (%)"
+                                    [(ngModel)]="companyObj.salesTax">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="importDuty">Import Duty (%)</label>
+                                <input type="text" class="form-control" id="phoneNumber" placeholder="Import Duty (%)"
+                                    [(ngModel)]="companyObj.importDuty">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="cashDiscount">Cash Discount(%)</label>
+                                <input type="text" class="form-control" id="emailAddress" placeholder="Cash Discount(%)"
+                                    [(ngModel)]="companyObj.cashDiscount">
+                            </div>
+                        </div>
+                       
+                      
+                    </div>
+                </ngx-tab>
+               
+                <ngx-tab tabTitle="Channels">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="typeofChannels">Type of Channels</label>
+                                <div>
+                                    <div class="form-check mt-0 form-check-inline">
+                                        1. Instore <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="Instore">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check mt-0 form-check-inline">
+                                        2. Phone <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="Phone">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+                                    <div class="form-check mt-0 form-check-inline">
+                                        3. Online <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="Online">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="storeNumber">Store Number</label>
+                                <input type="number" class="form-control" id="storeNumber" placeholder="Store Number"
+                                    [(ngModel)]="companyObj.storeNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Address"
+                                    [(ngModel)]="companyObj.address">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <select class="form-control" id="city" placeholder="City" [(ngModel)]="companyObj.city">
+                                    <option>Select City</option>
+                                    <option>New York</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <select class="form-control" id="state" placeholder="state"
+                                    [(ngModel)]="companyObj.state">
+                                    <option>Select State</option>
+                                    <option>DC</option>
+                                </select>
+                            </div>
+                        </div>
+<div class="mb-3 row">
+     <div class="col-sm-12">
+              <a class="TagBtn addBtn bg-green" (click)="addstoreLocationsListRow()"  title="Add Store Locations"> <i class="fa fa-plus"></i>  </a>
+            </div>
+    </div>
+          <div class="col-md-12">
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Store Number
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                            <th>
+                                City
+                            </th>
+                            <th>
+                                State
+                            </th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of storeLocationsList">
+                            <td>
+                                <b> {{item.storeNumber}}</b>
+                            </td>
+                            <td>
+                                {{item.address}}
+                            </td>
+                            <td>
+                                <b> {{item.city}}</b>
+                            </td>
+                            <td>
+                                {{item.state}}
+                            </td>
+                            <td>
+                                <button (click)="deletestoreLocationsRow(i)" class="btn btn-sm btn-danger btn-delete-user" title="Delete">
+                                    <i class="fa fa-trash"></i>
+                                  </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+                         </div>
+                </ngx-tab>
+            </ngx-tabset>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,92 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2" (click)="goToUser()"><i class="mdi mdi-keyboard-return"></i></button>{{userObj.id}}</h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="button" title="Save" class="btn btn-save me-2"><i class="mdi mdi-content-save-all"></i></button>
+                    <button type="button" title="Deactive" class="btn btn-info me-2"><i class="mdi mdi-printer-alert"></i></button>
+                    <button type="button" title="Delete" class="btn btn-warning me-2"><i class="mdi mdi-cash"></i></button>
+                    <button type="button" title="Reactivate" class="btn btn-return me-2"><i
+                            class="mdi mdi-ticket-confirmation"></i></button>
+                    <button type="button" title="Resend link" class="btn btn-price me-2"><i class="mdi mdi-cash-multiple"></i></button>
+                                   
+                    
+
+                </div>
+            </div>
+
+            <ngx-tabset customNavClass="nav-test-class">
+                <ngx-tab tabTitle="General" [bypassDOM]="true">
+                    <ng-template>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">First Name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="First Name" [(ngModel)]="userObj.firstName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Last Name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Last Name" [(ngModel)]="userObj.lastName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Email Address</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Email Address" [(ngModel)]="userObj.emailaddress">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Role</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Role" [(ngModel)]="userObj.role">
+                                </div>
+                            </div>
+                          
+                        
+                        </div>
+                    </ng-template>
+
+                </ngx-tab>
+                <ngx-tab tabTitle="IOS">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Username"
+                                    [(ngModel)]="userObj.username">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    [(ngModel)]="userObj.password">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="renterPassword">Renter Password</label>
+                                <input type="text" class="form-control" id="renterPassword" placeholder="Renter Password"
+                                    [(ngModel)]="userObj.renterPassword">
+                            </div>
+                        </div>
+                       
+                      
+                    </div>
+                </ngx-tab>
+            </ngx-tabset>
+
+        </div>
+
+    </div>
+
+</div>

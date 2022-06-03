@@ -66,6 +66,34 @@ const routes: Routes = [
           import("./views/purchases/purchases.module").then(
             (m) => m.PurchasesModule
           ),
+      },
+      {
+        path: "company",
+        loadChildren: () =>
+          import("./views/company/company.module").then(
+            (m) => m.CompanyModule
+          ),
+      },
+      {
+        path: "user",
+        loadChildren: () =>
+          import("./views/user/user.module").then(
+            (m) => m.UserModule
+          ),
+      },
+      {
+        path: "roles",
+        loadChildren: () =>
+          import("./views/roles/roles.module").then(
+            (m) => m.RolesModule
+          ),
+      },
+      {
+        path: "classification",
+        loadChildren: () =>
+          import("./views/classification/classification.module").then(
+            (m) => m.ClassificationModule
+          ),
       }
     ]
   },
