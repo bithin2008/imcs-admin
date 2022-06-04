@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'imcs-application';
+  token: any;
+  constructor(private router: Router) {
+    this.token = localStorage.getItem('token');
+  }
+
+  ngOnInit(): void {
+    if (this.token) {
+      this.router.navigate(['/reports'])
+    }
+  }
+
 }

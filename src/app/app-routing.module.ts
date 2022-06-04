@@ -96,6 +96,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: "settings",
+        loadChildren: () =>
+          import("./views/settings/settings.module").then(
+            (m) => m.SettingsModule
+          ),
+      },
+      {
         path: "vendor",
         loadChildren: () =>
           import("./views/vendor/vendor.module").then(

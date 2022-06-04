@@ -1,0 +1,203 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2"
+                            (click)="goToSales()"><i class="mdi mdi-keyboard-return"></i></button>
+                    </h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="button" class="btn btn-info me-2"><i class="mdi mdi-printer-alert"></i></button>
+                    <button type="button" class="btn btn-warning me-2"><i class="mdi mdi-cash"></i></button>
+                    <button type="button" class="btn btn-return me-2"><i
+                            class="mdi mdi-ticket-confirmation"></i></button>
+                    <button type="button" class="btn btn-price me-2"><i class="mdi mdi-cash-multiple"></i></button>
+                    <button type="button" class="btn btn-danger me-2"><i class="mdi mdi-trash-can"></i></button>
+                    <button type="button" class="btn btn-save me-2"><i class="mdi mdi-content-save-all"></i></button>
+
+                </div>
+            </div>
+
+            <ngx-tabset customNavClass="nav-test-class">
+                <ngx-tab tabTitle="General" [bypassDOM]="true">
+                    <ng-template>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Invoice Number</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Invoice Number" [(ngModel)]="salesObj.invoiceNo">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Invoice Date & Time</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Invoice Number" [(ngModel)]="salesObj.dateTime">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleSelectGender">Channel</label>
+                                    <select class="form-control" id="exampleSelectGender">
+                                        <option>Store</option>
+                                        <option>Online</option>
+                                        <option>Phone-Order</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleSelectGender">Order Type</label>
+                                    <select class="form-control" id="exampleSelectGender">
+                                        <option>Custom</option>
+                                        <option>Pre-Order</option>
+                                        <option>Standard</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Sales Representative</label>
+                                    <input type="text" class="form-control" id="exampleInputName1"
+                                        placeholder="Sales Representative" [(ngModel)]="salesObj.salesRepresentative">
+                                </div>
+                            </div>
+
+                        </div>
+                    </ng-template>
+
+                </ngx-tab>
+                <ngx-tab tabTitle="Customer">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="customerName">Customer Name</label>
+                                <input type="text" class="form-control" id="customerName" placeholder="Customer Name"
+                                    [(ngModel)]="salesObj.customerName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number"
+                                    [(ngModel)]="salesObj.phoneNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="text" class="form-control" id="emailAddress" placeholder="Email Address"
+                                    [(ngModel)]="salesObj.emailAddress">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="emailAddress">Out of State</label>
+                                <div>
+                                    <div class="form-check mt-0 form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check mt-0 form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Address"
+                                    [(ngModel)]="salesObj.address">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <select class="form-control" id="city" placeholder="City" [(ngModel)]="salesObj.city">
+                                    <option>Select City</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <select class="form-control" id="state" placeholder="state"
+                                    [(ngModel)]="salesObj.state">
+                                    <option>Select State</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="zip">Zip Code</label>
+                                <input type="text" class="form-control" id="state" placeholder="zip"
+                                    [(ngModel)]="salesObj.zip">
+                            </div>
+                        </div>
+                    </div>
+                </ngx-tab>
+                <ngx-tab tabTitle="Products">
+                    <div class="text-end">
+                        <button type="button" class="btn btn-return me-2"><i
+                                class="mdi mdi-format-list-numbered"></i></button>
+                        <button type="button" class="btn btn-price me-2"><i
+                                class="mdi mdi-format-list-bulleted-square"></i></button>
+                        <button type="button" class="btn btn-save me-2"><i
+                                class="mdi mdi-note-plus-outline"></i></button>
+                        <button type="button" class="btn btn-save me-2"><i class="mdi mdi-plus-box"></i></button>
+                    </div>
+                    <div class="mt-2">
+                        <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
+                            [rowData]="productList" [columnDefs]="productColumnDefs">
+                        </ag-grid-angular>
+                    </div>
+
+                </ngx-tab>
+                <ngx-tab tabTitle="Payments">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="totalBalance">Total Bal </label>
+                                <input type="number" class="form-control" id="totalBalance" placeholder="Total Bal"
+                                    [(ngModel)]="salesObj.totalBalance">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="totalAmount">Total Amount</label>
+                                <input type="number" class="form-control" id="totalAmount" placeholder="Total Amount"
+                                    [(ngModel)]="salesObj.totalAmount">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="display:block;">&nbsp;</label>
+                            <div class="form-check mt-3 form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="yes"
+                                    [(ngModel)]="salesObj.cashDiscount">
+                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
+                                [rowData]="paymentList" [columnDefs]="paymentColumnDefs"
+                                [defaultColDef]="defaultColDef">
+                            </ag-grid-angular>
+                        </div>
+                    </div>
+                </ngx-tab>
+            </ngx-tabset>
+
+        </div>
+
+    </div>
+
+</div>
