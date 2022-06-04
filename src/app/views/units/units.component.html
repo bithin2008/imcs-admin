@@ -1,0 +1,66 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title mb-3">Units</h3>
+         
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="unitName">Unit Name</label>
+                        <input type="text" class="form-control" id="unitName"
+                            placeholder="Unit Name" [(ngModel)]="unitsObj.unitName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="symbol">Symbol</label>
+                        <input type="text" class="form-control" id="symbol"
+                            placeholder="Symbol" [(ngModel)]="unitsObj.symbol">
+                    </div>
+                </div>
+            
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                         <a class="TagBtn addBtn bg-green" (click)="addunitsListRow()"  title="Add Store Locations"> <i class="fa fa-plus"></i>  </a>
+                       </div>
+               </div>
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Unit Name
+                            </th>
+                            <th>
+                                Symbol
+                            </th>
+                            <th scope="col">Action</th>
+                                                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of unitsList">
+                            <td>
+                                <b> {{item.unitName}}</b>
+                            </td>
+                            <td>
+                                {{item.symbol}}
+                            </td>
+                            <td>
+                                <button (click)="deleteunitsRow(i)" class="btn btn-sm btn-danger btn-delete-user" title="Delete">
+                                    <i class="fa fa-trash"></i>
+                                  </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
