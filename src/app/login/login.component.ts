@@ -64,9 +64,9 @@ export class LoginComponent implements OnInit {
       // } else {
       //   this.toastr.error(response.message, 'Error');
       // }
-    }, (error) => {
-      this.toastr.error(error, 'Warning');
-       //this.toastr.error(error);
+    }, (er) => {
+      this.toastr.error(er.error.message, 'Warning');
+      //this.toastr.error(error);
     })
     // this.router.navigate(['/default']);
   }

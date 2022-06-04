@@ -41,12 +41,12 @@ export class WebService {
       //   `Backend returned code ${error.status}, ` +
       //   `body was: ${error.error}`);
       return throwError(
-        error.status);
+        error);
     }
     return throwError(
       'Something bad happened; please try again later.');
   };
-  
+
   get(url: any): Observable<any> {
     return this._http.get(
       environment.API_ENDPOINT + url, this.getHeader()
@@ -59,7 +59,7 @@ export class WebService {
       environment.API_ENDPOINT + url, data, this.getHeader()
     )
       .pipe(
-        catchError(err => { return this.handleError(err)})
+        catchError(err => { return this.handleError(err) })
       );
   }
   checklogin(data: any, url: any) {
@@ -117,25 +117,5 @@ export class WebService {
       );
   }
 
-  getLookupData(url: any, keys: any): Observable<any> {
 
-    //requests
-    const desiredProjects = this._http.get(`${environment.API_ENDPOINT}${url}?type=${keys[0]}`).pipe(
-      map((response: any) => { return response.results }),
-      catchError((error: any) => { return of(null) }));
-
-    const desiredUnitTypes = this._http.get(`${environment.API_ENDPOINT}${url}?type=${keys[1]}`).pipe(
-      map((response: any) => { return response.results }),
-      catchError((error: any) => { return of(null) }));
-
-    const desiredPriceRange = this._http.get(`${environment.API_ENDPOINT}${url}?type=${keys[2]}`).pipe(
-      map((response: any) => { return response.results }),
-      catchError((error: any) => { return of(null) }));
-
-    const howDidYouHere = this._http.get(`${environment.API_ENDPOINT}${url}?type=${keys[3]}`).pipe(
-      map((response: any) => { return response.results }),
-      catchError((error: any) => { return of(null) }));
-
-    return forkJoin([desiredProjects, desiredUnitTypes, desiredPriceRange, howDidYouHere]);
-  }
 }
