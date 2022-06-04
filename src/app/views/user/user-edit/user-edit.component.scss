@@ -1,0 +1,54 @@
+button.btn-custom {
+    background: #830459;
+    border: 2px solid #c93597;
+    color: #fff;
+    border-radius: 10px;
+    height: 44px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button.btn-custom:hover {
+    background: #ab1d7b;
+    border: 2px solid #830459;
+}
+
+.form-check .form-check-label{
+    margin-left: 0 !important;
+}
+
+
+button.btn-save {
+    background: #830459;
+    border: 2px solid #c93597;
+    color: #fff;
+}
+
+button.btn-save:hover {
+    background: #ab1d7b;
+    border: 2px solid #830459;
+}
+
+button.btn-price {
+    background-color: #1960c7;
+    border: 2px solid #014ab3;
+    color: #fff;
+}
+
+button.btn-price:hover {
+    background-color: #0645a1;
+    border: 2px solid #00265c;
+}
+
+button.btn-return {
+    background-color: #017181;
+    border: 2px solid #005460;
+    color: #fff;
+}
+
+button.btn-return:hover {
+    background-color: #005460;
+    border: 2px solid #000000;
+}
