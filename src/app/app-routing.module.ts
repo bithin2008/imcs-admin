@@ -102,13 +102,13 @@ const routes: Routes = [
             (m) => m.ClassificationModule
           ),
       },
-      {
-        path: "settings",
-        loadChildren: () =>
-          import("./views/settings/settings.module").then(
-            (m) => m.SettingsModule
-          ),
-      },
+      // {
+      //   path: "settings",
+      //   loadChildren: () =>
+      //     import("./views/settings/settings.module").then(
+      //       (m) => m.SettingsModule
+      //     ),
+      // },
       {
         path: "vendor",
         loadChildren: () =>
