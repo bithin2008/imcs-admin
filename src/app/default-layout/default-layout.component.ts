@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AvatarModule, AvatarConfig } from "ngx-avatar";
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-default-layout',
   templateUrl: './default-layout.component.html',
@@ -7,11 +8,20 @@ import { AvatarModule, AvatarConfig } from "ngx-avatar";
 })
 export class DefaultLayoutComponent implements OnInit {
   userName: any;
-  constructor() {
+  isOpenSettings: boolean = false
+  constructor(private router: Router) {
     this.userName = localStorage.getItem('username');
   }
 
   ngOnInit(): void {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      console.log(evt);
+      this.isOpenSettings = false;
+    });
+
   }
 
 }

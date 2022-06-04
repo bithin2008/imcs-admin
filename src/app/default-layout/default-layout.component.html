@@ -325,19 +325,28 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
-                    <li class="nav-item" routerLink="/settings" routerLinkActive="active">
-                        <a class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="icons">
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="icons"
+                            (click)="isOpenSettings=!isOpenSettings">
                             <i class="menu-icon mdi  mdi-tune"></i>
                             <span class="menu-title">Settings</span>
                             <i class="menu-arrow"></i>
                         </a>
-                    </li>
-                    <li class="nav-item" routerLink="/vendor" routerLinkActive="active">
-                        <a class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="icons">
-                            <i class="menu-icon mdi  mdi-tune"></i>
-                            <span class="menu-title">Vendor</span>
-                            <i class="menu-arrow"></i>
-                        </a>
+                        <div class="collapse show" id="ui-basic" *ngIf="isOpenSettings">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Company</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/user">Users</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/roles">Roles</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Taxes</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        routerLink="/classification">Classifications</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/vendor">Vendors</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Materials</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Bullion</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Units</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>

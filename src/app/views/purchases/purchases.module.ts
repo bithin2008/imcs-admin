@@ -6,7 +6,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { JwPaginationModule } from 'jw-angular-pagination';
 @NgModule({
   declarations: [PurchasesComponent],
   imports: [
@@ -15,7 +15,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     PurchasesRoutingModule,
-    AgGridModule.withComponents([])
+    JwPaginationModule
   ]
 })
 export class PurchasesModule { }

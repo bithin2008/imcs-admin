@@ -33,10 +33,19 @@ export class PurchasesComponent implements OnInit {
 
   ];
 
+  public pageOfItems: any = [];
+  public items: any = [];
 
   constructor(private router: Router, private modalService: BsModalService) { }
 
   ngOnInit(): void {
+
+    this.items = Array(50).fill(0).map((x, i) => ({
+      "vendorName": `Tilak Jewelers ${i + 1}`,
+      "vendorNumber": `500${i + 1}`,
+      "isLocked": false,
+      "purchaseDate": `2022-03-${i + 1}`
+    }));
   }
 
   createInvoice() {
@@ -58,5 +67,9 @@ export class PurchasesComponent implements OnInit {
 
   editSales(item) {
     this.router.navigate([`/sales/${item.invoiceNo}`]);
+  }
+
+  onChangePage(pageOfItems: Array<any>) {
+    this.pageOfItems = pageOfItems;
   }
 }

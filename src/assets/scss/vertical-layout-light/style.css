@@ -25781,13 +25781,14 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav.sub-menu .nav-item::before {
-  content: "";
-  width: 5px;
-  height: 5px;
+  content: '»';
+  width: 11px;
+  height: 12px;
   position: absolute;
-  margin-top: 16px;
+  margin-top: 5px;
   border-radius: 50%;
-  background: #b2b2b2;
+  /* background: #b2b2b2; */
+  color: #fff;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link {

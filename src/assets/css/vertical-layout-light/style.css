@@ -30972,13 +30972,14 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav.sub-menu .nav-item::before {
-  content: '';
-  width: 5px;
-  height: 5px;
+  content: '»';
+  width: 11px;
+  height: 12px;
   position: absolute;
-  margin-top: 16px;
+  margin-top: 5px;
   border-radius: 50%;
-  background: #b2b2b2;
+  /* background: #b2b2b2; */
+  color: #fff;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link {
@@ -31090,7 +31091,8 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav.sub-menu {
-  background: #1a1f26;
+  background: #95034a;
+  border-radius: 0px 20px 20px 0px;
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link {

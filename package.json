@@ -26,6 +26,7 @@
     "compass-mixins": "^0.12.11",
     "google-libphonenumber": "^3.2.27",
     "intl-tel-input": "^17.0.3",
+    "jw-angular-pagination": "^1.2.0",
     "ngx-avatar": "^4.1.0",
     "ngx-bootstrap": "^6.2.0",
     "ngx-dropdown": "0.0.22",

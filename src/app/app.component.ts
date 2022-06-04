@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,21 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   token: any;
-  constructor(private router: Router) {
+  returnUrl: any;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.token = localStorage.getItem('token');
+    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
   }
 
   ngOnInit(): void {
+
+
     if (this.token) {
-      this.router.navigate(['/reports'])
+      if (this.returnUrl)
+        this.router.navigateByUrl(this.returnUrl);
+      else this.router.navigate(['/reports'])
     }
+
   }
 
 }

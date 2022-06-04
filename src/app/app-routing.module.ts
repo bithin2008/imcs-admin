@@ -61,6 +61,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: "inventory",
+        loadChildren: () =>
+          import("./views/inventory/inventory.module").then(
+            (m) => m.InventoryModule
+          ),
+      },
+      {
         path: "purchases",
         loadChildren: () =>
           import("./views/purchases/purchases.module").then(

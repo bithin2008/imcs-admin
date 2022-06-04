@@ -39,6 +39,22 @@
     position: relative;
 }
 
+.pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #7e033f;
+    border-color: #7e033f;
+}
+
+.page-link {
+    color: #212529;
+}
+
 /*****/
 .nav-tabset {
     margin-bottom: 0;

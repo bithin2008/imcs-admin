@@ -5,7 +5,8 @@ import { SalesRoutingModule } from './sales-routing.module';
 import { SalesEditComponent } from './sales-edit/sales-edit.component';
 import { TabsModule } from 'ngx-tabset';
 import { FormsModule } from '@angular/forms';
-import { AgGridModule } from 'ag-grid-angular';
+//import { AgGridModule } from 'ag-grid-angular';
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 @NgModule({
   declarations: [SalesComponent, SalesEditComponent],
@@ -14,7 +15,8 @@ import { AgGridModule } from 'ag-grid-angular';
     FormsModule,
     SalesRoutingModule,
     TabsModule.forRoot(),
-    AgGridModule.withComponents([])
+    JwPaginationModule
+    //  AgGridModule.withComponents([])
   ]
 })
 export class SalesModule { }
