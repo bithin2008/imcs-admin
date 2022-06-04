@@ -115,6 +115,34 @@ const routes: Routes = [
           import("./views/vendor/vendor.module").then(
             (m) => m.VendorModule
           ),
+      },
+      {
+        path: "materials",
+        loadChildren: () =>
+          import("./views/materials/materials.module").then(
+            (m) => m.MaterialsModule
+          ),
+      },
+      {
+        path: "bullion",
+        loadChildren: () =>
+          import("./views/bullion/bullion.module").then(
+            (m) => m.BullionModule
+          ),
+      },
+      {
+        path: "units",
+        loadChildren: () =>
+          import("./views/units/units.module").then(
+            (m) => m.UnitsModule
+          ),
+      },
+      {
+        path: "terminal",
+        loadChildren: () =>
+          import("./views/terminal/terminal.module").then(
+            (m) => m.TerminalModule
+          ),
       }
     ]
   },

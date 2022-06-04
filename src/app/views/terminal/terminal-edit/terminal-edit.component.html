@@ -1,0 +1,74 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2"
+                            (click)="goToTerminal()"><i class="mdi mdi-keyboard-return"></i></button>{{terminalObj.id}}</h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="button" title="Save" class="btn btn-save me-2"><i
+                            class="mdi mdi-content-save-all"></i></button>
+                    <button type="button" title="Clear" class="btn btn-info me-2"><i
+                            class="mdi mdi-printer-alert"></i></button>
+                </div>
+            </div>
+
+            <ngx-tabset customNavClass="nav-test-class">
+                <ngx-tab tabTitle="General" [bypassDOM]="true">
+                    <ng-template>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="terminalName">Terminal Name</label>
+                                    <input type="text" class="form-control" id="terminalName"
+                                        placeholder="Terminal Name" [(ngModel)]="terminalObj.terminalName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="aPIKey">API Key</label>
+                                    <input type="text" class="form-control" id="aPIKey"
+                                        placeholder="API Key" [(ngModel)]="terminalObj.aPIKey">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="login">Login</label>
+                                    <input type="text" class="form-control" id="login"
+                                        placeholder="Login" [(ngModel)]="terminalObj.login">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" id="password"
+                                        placeholder="Password" [(ngModel)]="terminalObj.password">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="portNumber">Port Number</label>
+                                    <input type="text" class="form-control" id="portNumber"
+                                        placeholder="Port Number" [(ngModel)]="terminalObj.portNumber">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="iPAddress">IP Address</label>
+                                    <input type="text" class="form-control" id="iPAddress"
+                                        placeholder="IP Address" [(ngModel)]="terminalObj.iPAddress">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                </ngx-tab>
+             
+            </ngx-tabset>
+
+        </div>
+
+    </div>
+
+</div>
