@@ -94,6 +94,13 @@ const routes: Routes = [
           import("./views/classification/classification.module").then(
             (m) => m.ClassificationModule
           ),
+      },
+      {
+        path: "vendor",
+        loadChildren: () =>
+          import("./views/vendor/vendor.module").then(
+            (m) => m.VendorModule
+          ),
       }
     ]
   },
