@@ -3,7 +3,9 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2" (click)="goToSales()"><i class="mdi mdi-keyboard-return"></i></button>{{salesObj.invoiceNo}}</h3>
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2"
+                            (click)="goToSales()"><i class="mdi mdi-keyboard-return"></i></button>{{salesObj.invoiceNo}}
+                    </h3>
                 </div>
                 <div class="col-md-6 text-end">
                     <button type="button" class="btn btn-info me-2"><i class="mdi mdi-printer-alert"></i></button>
@@ -153,9 +155,58 @@
                         <button type="button" class="btn btn-save me-2"><i class="mdi mdi-plus-box"></i></button>
                     </div>
                     <div class="mt-2">
-                        <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
-                            [rowData]="productList" [columnDefs]="productColumnDefs">
-                        </ag-grid-angular>
+                        <div class="table-responsive pt-3">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            PID
+                                        </th>
+                                        <th>
+                                            Certificate Number
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Sub Total
+                                        </th>
+                                        <th>
+                                            Taxes
+                                        </th>
+                                        <th style="width: 70px;">
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item  of productList ">
+                                        <td>
+                                            <b> {{item.pid}}</b>
+                                        </td>
+                                        <td>
+                                            {{item.certificateNumber}}
+                                        </td>
+                                        <td>
+                                            {{item.description}}
+                                        </td>
+                                        <td>
+                                            {{item.subTotal}}
+                                        </td>
+                                        <td>
+                                            {{item.taxes}}
+                                        </td>
+                                        <td>
+
+                                            <button type="button" class="btn btn-outline-danger btn-icon"><i
+                                                    class="mdi mdi-delete"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
 
                 </ngx-tab>
@@ -185,10 +236,37 @@
                         </div>
 
                         <div class="col-md-12">
-                            <ag-grid-angular class="ag-theme-alpine" style="width: 100%; height: 400px;"
-                                [rowData]="paymentList" [columnDefs]="paymentColumnDefs"
-                                [defaultColDef]="defaultColDef">
-                            </ag-grid-angular>
+
+
+                            <div class="mt-2">
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Payment Type
+                                                </th>
+                                                <th>
+                                                    Amount
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item  of paymentList ">
+                                                <td>
+                                                    <b> {{item.paymentType}}</b>
+                                                </td>
+                                                <td>
+                                                    {{item.Amount}}
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </ngx-tab>

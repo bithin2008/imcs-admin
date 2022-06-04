@@ -24,9 +24,11 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-end">
-                    <button type="button" class="btn btn-return me-2"><i class="mdi mdi-keyboard-return"></i></button>
-                    <button type="button" class="btn btn-price me-2"><i class="mdi mdi-cash-multiple"></i></button>
-                    <button type="button" class="btn btn-save me-2" (click)="createInvoice()"><i
+                    <button type="button" class="btn btn-return me-2" title="Return" (click)="salesReturn()"><i
+                            class="mdi mdi-keyboard-return"></i></button>
+                    <button type="button" class="btn btn-price me-2" title="Price Check"><i
+                            class="mdi mdi-cash-multiple"></i></button>
+                    <button type="button" class="btn btn-save me-2" title="Create Invoice" (click)="createInvoice()"><i
                             class="mdi mdi-content-save-all"></i></button>
                 </div>
 

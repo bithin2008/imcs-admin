@@ -7,9 +7,10 @@ import { TabsModule } from 'ngx-tabset';
 import { FormsModule } from '@angular/forms';
 //import { AgGridModule } from 'ag-grid-angular';
 import { JwPaginationModule } from 'jw-angular-pagination';
+import { SalesReturnComponent } from './sales-return/sales-return.component';
 
 @NgModule({
-  declarations: [SalesComponent, SalesEditComponent],
+  declarations: [SalesComponent, SalesEditComponent, SalesReturnComponent],
   imports: [
     CommonModule,
     FormsModule,

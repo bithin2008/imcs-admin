@@ -26,8 +26,8 @@ export class InventoryComponent implements OnInit {
     }));
   }
 
-  createInvoice() {
-    this.router.navigate([`/inventory/new`]);
+  createInventory() {
+
   }
 
 

@@ -128,6 +128,10 @@ export class SalesComponent implements OnInit {
     this.router.navigate([`/sales/${item.invoiceNo}`]);
   }
 
+  salesReturn() {
+    this.router.navigate([`/sales/sales-return`]);
+  }
+
   onChangePage(pageOfItems: Array<any>) {
     this.pageOfItems = pageOfItems;
   }

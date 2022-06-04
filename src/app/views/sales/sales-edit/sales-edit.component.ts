@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ColDef } from 'ag-grid-community';
 @Component({
   selector: 'app-sales-edit',
   templateUrl: './sales-edit.component.html',
@@ -132,22 +131,34 @@ export class SalesEditComponent implements OnInit {
       "taxes": "21,750",
       "removeProduct": "21,750"
     },
+    {
+      "pid": "Cash",
+      "certificateNumber": "24,000",
+      "description": "24,000",
+      "subTotal": "24,000",
+      "taxes": "24,000",
+      "removeProduct": "24,000"
+    },
+    {
+      "pid": "Cash",
+      "certificateNumber": "21,750",
+      "description": "21,750",
+      "subTotal": "21,750",
+      "taxes": "21,750",
+      "removeProduct": "21,750"
+    },
+    {
+      "pid": "Cash",
+      "certificateNumber": "24,000",
+      "description": "24,000",
+      "subTotal": "24,000",
+      "taxes": "24,000",
+      "removeProduct": "24,000"
+    },
   ];
-  paymentColumnDefs: ColDef[] = [
-    { field: 'paymentType', resizable: true },
-    { field: 'Amount', resizable: true }
-  ];
-  productColumnDefs: ColDef[] = [
-    { field: 'pid', resizable: true },
-    { field: 'certificateNumber', resizable: true },
-    { field: 'description', resizable: true },
-    { field: 'subTotal', resizable: true },
-    { field: 'taxes', resizable: true },
-    { field: 'removeProduct', resizable: true },
-  ];
-  public defaultColDef: ColDef = {
-    resizable: true,
-  };
+
+
+
   constructor(private router: Router,
     public activatedRoute: ActivatedRoute,) {
     this.salesId = this.activatedRoute.snapshot.paramMap.get("id");
