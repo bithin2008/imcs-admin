@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class VendorComponent implements OnInit {
   vendorList: any = null;
   allvendorList: any = null;
+  public pageOfItems: any = [];
+  public items: any = [];
   constructor(private router: Router,) {
   }
 
@@ -69,6 +71,14 @@ export class VendorComponent implements OnInit {
 
     ];
     this.allvendorList = this.vendorList;
+
+    this.items = Array(50).fill(0).map((x, i) => ({
+      "Id": `IMCS00${i + 1}`,
+      "VendorNumber": `IMCS00${i + 1}`,
+      "CompanyName": "amazon",
+      "Address": `7${i + 1} ST. NICHOLAS DRIVE`,
+      "ContactName": "ABC ABC"
+    }));
   }
 
   createVendor() {
@@ -87,5 +97,8 @@ export class VendorComponent implements OnInit {
 
   editVendor(item) {
     this.router.navigate([`/vendor/${item.id}`]);
+  }
+  onChangePage(pageOfItems: Array<any>) {
+    this.pageOfItems = pageOfItems;
   }
 }

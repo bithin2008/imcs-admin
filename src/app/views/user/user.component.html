@@ -5,15 +5,17 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <select name="selectedStatus" [(ngModel)]="status" id="aantal" class="form-select" (ngModelChange)="changeStatus()">
+                        <select name="selectedStatus" [(ngModel)]="status" id="aantal" class="form-select"
+                            (ngModelChange)="changeStatus()">
                             <option *ngFor="let st of statusList" [value]="st">{{st}}</option>
-                          </select>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search by Name" aria-label="Username" (change)="search($event.target.value)">
+                            <input type="text" class="form-control" placeholder="Search by Name" aria-label="Username"
+                                (change)="search($event.target.value)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
                             </div>
@@ -21,13 +23,13 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-end">
-                   
+
                     <button type="button" class="btn btn-save me-2" title="Add User" (click)="createUser()"><i
                             class="mdi mdi-content-save-all"></i></button>
                 </div>
 
             </div>
-         
+
             <div class="table-responsive pt-3">
                 <table class="table table-bordered">
                     <thead>
@@ -38,10 +40,10 @@
                             <th>
                                 Role
                             </th>
-                            <th>
+                            <th width="10%">
                                 Status
                             </th>
-                                                       
+
                         </tr>
                     </thead>
                     <tbody>
@@ -56,9 +58,9 @@
                                 <label class="badge badge-danger" *ngIf="item.status=='Inactive'">Inactive</label>
                                 <label class="badge badge-success" *ngIf="item.status=='Active'">Active</label>
                             </td>
-                            
-                           
-                           
+
+
+
                         </tr>
 
                     </tbody>
