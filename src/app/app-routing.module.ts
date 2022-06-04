@@ -75,6 +75,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: "customer",
+        loadChildren: () =>
+          import("./views/customer/customer.module").then(
+            (m) => m.CustomerModule
+          ),
+      },
+      {
         path: "company",
         loadChildren: () =>
           import("./views/company/company.module").then(

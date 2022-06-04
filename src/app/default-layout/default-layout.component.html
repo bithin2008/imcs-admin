@@ -325,19 +325,19 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" data-bs-toggle="collapse" aria-expanded="false" aria-controls="icons"
-                            (click)="isOpenSettings=!isOpenSettings">
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" routerLink="/company" routerLinkActive="active"
+                            aria-expanded="false" aria-controls="icons" (click)="isOpenSettings=!isOpenSettings">
                             <i class="menu-icon mdi  mdi-tune"></i>
                             <span class="menu-title">Settings</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse show" id="ui-basic" *ngIf="isOpenSettings">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Company</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/company">Company</a></li>
                                 <li class="nav-item"> <a class="nav-link" routerLink="/user">Users</a></li>
                                 <li class="nav-item"> <a class="nav-link" routerLink="/roles">Roles</a></li>
-                                <li class="nav-item"> <a class="nav-link" routerLink="/settings">Taxes</a></li>
+                                <li class="nav-item"> <a class="nav-link" routerLink="/taxes">Taxes</a></li>
                                 <li class="nav-item"> <a class="nav-link"
                                         routerLink="/classification">Classifications</a>
                                 </li>

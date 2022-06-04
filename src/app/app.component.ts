@@ -17,11 +17,11 @@ export class AppComponent {
   ngOnInit(): void {
 
 
-    if (this.token) {
-      if (this.returnUrl)
-        this.router.navigateByUrl(this.returnUrl);
-      else this.router.navigate(['/reports'])
-    }
+    // if (this.token) {
+    //   if (this.returnUrl)
+    //     this.router.navigateByUrl(this.returnUrl);
+    //   else this.router.navigate(['/reports'])
+    // }
 
   }
 

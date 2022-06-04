@@ -19,7 +19,7 @@ export class DefaultLayoutComponent implements OnInit {
         return;
       }
       console.log(evt);
-      this.isOpenSettings = false;
+      // this.isOpenSettings = false;
     });
 
   }

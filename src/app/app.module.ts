@@ -20,7 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     DefaultLayoutComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
