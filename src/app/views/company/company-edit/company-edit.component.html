@@ -3,11 +3,14 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2" (click)="goToCompany()"><i class="mdi mdi-keyboard-return"></i></button>{{companyObj.invoiceNo}}</h3>
+                    <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2"
+                            (click)="goToCompany()"><i
+                                class="mdi mdi-keyboard-return"></i></button>{{companyObj.invoiceNo}}</h3>
                 </div>
                 <div class="col-md-6 text-end">
-                    
-                    <button type="button" title="Save" class="btn btn-save me-2"><i class="mdi mdi-content-save-all"></i></button>
+
+                    <button type="button" title="Save" class="btn btn-save me-2"><i
+                            class="mdi mdi-content-save-all"></i></button>
 
                 </div>
             </div>
@@ -23,6 +26,7 @@
                                         placeholder="Company Name" [(ngModel)]="companyObj.companyname">
                                 </div>
                             </div>
+                            <div class="col-md-6"></div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">Lincense Start Date</label>
@@ -125,33 +129,32 @@
                                     [(ngModel)]="companyObj.cashDiscount">
                             </div>
                         </div>
-                       
-                      
+
+
                     </div>
                 </ngx-tab>
-               
+
                 <ngx-tab tabTitle="Channels">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="typeofChannels">Type of Channels</label>
                                 <div>
-                                    <div class="form-check mt-0 form-check-inline">
-                                        1. Instore <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="Instore">
-                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Instore</label>
                                     </div>
-                                    <div class="form-check mt-0 form-check-inline">
-                                        2. Phone <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="Phone">
-                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                            value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">Phone</label>
                                     </div>
-                                    <div class="form-check mt-0 form-check-inline">
-                                        3. Online <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="Online">
-                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                            value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">Online</label>
                                     </div>
-
                                 </div>
 
                             </div>
@@ -189,57 +192,58 @@
                                 </select>
                             </div>
                         </div>
-<div class="mb-3 row">
-     <div class="col-sm-12">
-              <a class="TagBtn addBtn bg-green" (click)="addstoreLocationsListRow()"  title="Add Store Locations"> <i class="fa fa-plus"></i>  </a>
-            </div>
-    </div>
-          <div class="col-md-12">
-            <div class="table-responsive pt-3">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>
-                                Store Number
-                            </th>
-                            <th>
-                                Address
-                            </th>
-                            <th>
-                                City
-                            </th>
-                            <th>
-                                State
-                            </th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of storeLocationsList">
-                            <td>
-                                <b> {{item.storeNumber}}</b>
-                            </td>
-                            <td>
-                                {{item.address}}
-                            </td>
-                            <td>
-                                <b> {{item.city}}</b>
-                            </td>
-                            <td>
-                                {{item.state}}
-                            </td>
-                            <td>
-                                <button (click)="deletestoreLocationsRow(i)" class="btn btn-sm btn-danger btn-delete-user" title="Delete">
-                                    <i class="fa fa-trash"></i>
-                                  </button>
-                            </td>
-                        </tr>
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-                         </div>
+                        <div class="col-sm-12 mb-3 text-end">
+                            <button class="btn btn-save me-2" (click)="addstoreLocationsListRow()"
+                                title="Add Store Locations"> <i class="fa fa-plus"></i> </button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive pt-3">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Store Number
+                                            </th>
+                                            <th>
+                                                Address
+                                            </th>
+                                            <th>
+                                                City
+                                            </th>
+                                            <th>
+                                                State
+                                            </th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of storeLocationsList">
+                                            <td>
+                                                <b> {{item.storeNumber}}</b>
+                                            </td>
+                                            <td>
+                                                {{item.address}}
+                                            </td>
+                                            <td>
+                                                <b> {{item.city}}</b>
+                                            </td>
+                                            <td>
+                                                {{item.state}}
+                                            </td>
+                                            <td>
+                                                <button (click)="deletestoreLocationsRow(i)"
+                                                    class="btn btn-sm btn-danger btn-delete-user" title="Delete">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </ngx-tab>
             </ngx-tabset>
 
