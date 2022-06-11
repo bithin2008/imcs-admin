@@ -25,8 +25,8 @@ export class CustomerComponent implements OnInit {
     }));
   }
 
-  createInvoice() {
-    this.router.navigate([`/sales/new`]);
+  createCustomer() {
+    this.router.navigate([`/customer/add`]);
   }
 
 
