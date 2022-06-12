@@ -28,6 +28,9 @@
                     <thead>
                         <tr>
                             <th>
+                                Purchaser Order
+                            </th>
+                            <th>
                                 Vendor Name
                             </th>
                             <th class="text-center">
@@ -36,21 +39,35 @@
                             <th class="text-center">
                                 Purchase Date
                             </th>
+                            <th class="text-center">
+                                Products
+                            </th>
+                            <th class="text-center">
+                                Products Count
+                            </th>
                             <th style="width: 200px;">
-                                Status
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item  of pageOfItems">
+                        <tr *ngFor="let item  of purchaseList">
                             <td>
-                                <b> {{item.vendorName}}</b>
+                                <b> {{item.purchaseOrderNo}}</b>
+                            </td>
+                            <td>
+                                <b> {{item.vendorNo}}</b>
                             </td>
                             <td class="text-center">
-                                {{item.vendorNumber}}
+                                {{item.vendorName}}
                             </td>
                             <td class="text-center">
                                 {{item.purchaseDate}}
+                            </td>
+                            <td class="text-center">
+                                {{item.products?item.products:'-'}}
+                            </td>
+                            <td class="text-center">
+                                {{item.productCount}}
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning me-2" *ngIf="!item.isLocked"><i
@@ -74,7 +91,8 @@
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6 text-center">
-                    <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+                    <jw-pagination [items]="purchaseList" [pageSize]="10" (changePage)="onChangePage($event)">
+                    </jw-pagination>
                 </div>
 
                 <div class="col-md-3">&nbsp;</div>
