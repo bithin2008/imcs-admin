@@ -71,8 +71,8 @@ export class PurchasesComponent implements OnInit {
   }
 
 
-  editSales(item) {
-    this.router.navigate([`/sales/${item.invoiceNo}`]);
+  editPurchase(item) {
+    this.router.navigate([`/purchases/${item.purchaseOrderNo}`]);
   }
 
   onChangePage(pageOfItems: Array<any>) {

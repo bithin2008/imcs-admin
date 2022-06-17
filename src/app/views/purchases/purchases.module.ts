@@ -7,8 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { JwPaginationModule } from 'jw-angular-pagination';
+import { EditPurchaseComponent } from './edit-purchase/edit-purchase.component';
 @NgModule({
-  declarations: [PurchasesComponent],
+  declarations: [PurchasesComponent, EditPurchaseComponent],
   imports: [
     CommonModule,
     FormsModule,
