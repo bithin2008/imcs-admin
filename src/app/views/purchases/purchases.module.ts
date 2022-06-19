@@ -8,6 +8,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { EditPurchaseComponent } from './edit-purchase/edit-purchase.component';
+import { TabsModule } from 'ngx-tabset';
 @NgModule({
   declarations: [PurchasesComponent, EditPurchaseComponent],
   imports: [
@@ -16,7 +17,8 @@ import { EditPurchaseComponent } from './edit-purchase/edit-purchase.component';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     PurchasesRoutingModule,
-    JwPaginationModule
+    JwPaginationModule,
+    TabsModule
   ]
 })
 export class PurchasesModule { }
