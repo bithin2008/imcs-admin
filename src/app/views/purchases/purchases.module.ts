@@ -6,6 +6,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { EditPurchaseComponent } from './edit-purchase/edit-purchase.component';
 import { TabsModule } from 'ngx-tabset';
@@ -17,7 +18,7 @@ import { TabsModule } from 'ngx-tabset';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     PurchasesRoutingModule,
-    JwPaginationModule,
+    NgxPaginationModule,
     TabsModule
   ]
 })

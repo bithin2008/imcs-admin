@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3 class="card-title mb-3"><button type="button" class="btn btn-return me-2"
-                            (click)="goToSales()"><i class="mdi mdi-keyboard-return"></i></button>PID001
+                            (click)="goToSales()"><i class="mdi mdi-keyboard-return"></i></button>{{purchaseOrderNo}}
                     </h3>
                 </div>
                 <div class="col-md-6 text-end">
@@ -38,25 +38,29 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="ponumber">PO Number</label>
-                                    <input type="text" class="form-control" id="ponumber">
+                                    <input type="text" class="form-control" id="ponumber"
+                                        [(ngModel)]="purchaseDetails.purchaseOrderNo">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="purchaseDate">Purchase Date</label>
-                                    <input type="text" class="form-control" id="purchaseDate">
+                                    <input type="text" class="form-control" id="purchaseDate"
+                                        [(ngModel)]="purchaseDetails.purchaseDate">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="vendorname">Vendor Name</label>
-                                    <input type="text" class="form-control" id="vendorname">
+                                    <input type="text" class="form-control" id="vendorname"
+                                        [(ngModel)]="purchaseDetails.vendorName">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="vendorno">Vendor No</label>
-                                    <input type="text" class="form-control" id="vendorno">
+                                    <input type="text" class="form-control" id="vendorno"
+                                        [(ngModel)]="purchaseDetails.vendorNo">
                                 </div>
                             </div>
                         </div>
@@ -107,19 +111,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item  of pageOfItems ">
+                                <tr *ngFor="let item  of purchaseDetails.products ">
 
                                     <td>
-                                        <b> {{item.customerName}}</b>
+                                        {{item.description}}
                                     </td>
                                     <td>
-                                        {{item.phone}}
+                                        {{item.productId}}
                                     </td>
                                     <td>
-                                        {{item.email}}
+                                        {{item.vendorModel}}
                                     </td>
                                     <td>
-                                        {{item.address}}
+                                        {{item.productCategory.classification.classificationName}}
                                     </td>
                                     <td>
 
@@ -138,7 +142,7 @@
                     <div class="row">
                         <div class="col-md-3">&nbsp;</div>
                         <div class="col-md-6 text-center">
-                            <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+                            <!-- <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination> -->
                         </div>
                         <div class="col-md-3">&nbsp;</div>
                     </div>

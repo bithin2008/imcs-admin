@@ -30,10 +30,10 @@ export class PurchasesComponent implements OnInit {
     //   "purchaseDate": `2022-03-${i + 1}`
     // }));
 
-    this.getSubscriptionList();
+    this.getPurchaseList();
   }
 
-  getSubscriptionList() {
+  getPurchaseList() {
     // this.spinnerService.show();
     let url = `tilak/purchaseOrders`;
     if (this.filterForm.searchText)
@@ -72,7 +72,7 @@ export class PurchasesComponent implements OnInit {
 
 
   editPurchase(item) {
-    this.router.navigate([`/purchases/${item.purchaseOrderNo}`]);
+    this.router.navigate([`/purchases/edit/${item.purchaseOrderNo}`]);
   }
 
   onChangePage(pageOfItems: Array<any>) {
