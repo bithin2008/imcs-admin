@@ -11,6 +11,7 @@ export class PurchasesComponent implements OnInit {
   printModalRef?: BsModalRef;
   viewModalRef?: BsModalRef;
   purchaseModalRef?: BsModalRef;
+  page: number = 1;
   filterForm: any = {
     searchText: '',
   };
@@ -77,5 +78,9 @@ export class PurchasesComponent implements OnInit {
 
   onChangePage(pageOfItems: Array<any>) {
     this.pageOfItems = pageOfItems;
+  }
+
+  goToSales() {
+
   }
 }

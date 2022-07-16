@@ -49,5 +49,7 @@ export class EditPurchaseComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
 
+  goToSales() {
 
+  }
 }
